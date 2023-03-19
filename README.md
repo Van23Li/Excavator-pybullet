@@ -42,12 +42,6 @@ pip install numpy==1.21.3
 pip install pybullet==3.2.0
 ```
 
-# Configure URDF
-
-```jsx
-conda install pytorch torchvision -c pytorch
-```
-
 # Test
 
 ```cpp
