@@ -1,0 +1,859 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="excavatorplus">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.037276 -0.11211 -1.3696"
+        rpy="0 0 0" />
+      <mass
+        value="1584.9" />
+      <inertia
+        ixx="2256.8"
+        ixy="-0.00030194"
+        ixz="0.00039682"
+        iyy="1846.1"
+        iyz="-4.069"
+        izz="3789.3" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="1huizhuantai">
+    <inertial>
+      <origin
+        xyz="-0.033183 -0.98161 -0.29422"
+        rpy="0 0 0" />
+      <mass
+        value="4155.4" />
+      <inertia
+        ixx="3529.1"
+        ixy="203.56"
+        ixz="1.8362"
+        iyy="1890.9"
+        iyz="99.215"
+        izz="4823.8" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/1huizhuantai.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/1huizhuantai.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint1"
+    type="continuous">
+    <origin
+      xyz="-0.037276 -0.092793 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="1huizhuantai" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="2dongbi">
+    <inertial>
+      <origin
+        xyz="-5.4753E-15 2.7656 0.58457"
+        rpy="0 0 0" />
+      <mass
+        value="1139.2" />
+      <inertia
+        ixx="2254.3"
+        ixy="-1.5608E-12"
+        ixz="1.039E-12"
+        iyy="117.73"
+        iyz="110.05"
+        izz="2173.1" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/2dongbi.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/2dongbi.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint2"
+    type="revolute">
+    <origin
+      xyz="0 0.1 0"
+      rpy="0 0 0" />
+    <parent
+      link="1huizhuantai" />
+    <child
+      link="2dongbi" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="3dougan">
+    <inertial>
+      <origin
+        xyz="-6.546E-13 0.8525 0.13673"
+        rpy="0 0 0" />
+      <mass
+        value="588.48" />
+      <inertia
+        ixx="532.28"
+        ixy="1.0515E-11"
+        ixz="-1.0057E-12"
+        iyy="30.031"
+        iyz="47.289"
+        izz="525.77" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/3dougan.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/3dougan.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint3"
+    type="revolute">
+    <origin
+      xyz="0 5.7 0"
+      rpy="0 0 0" />
+    <parent
+      link="2dongbi" />
+    <child
+      link="3dougan" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="4chandou">
+    <inertial>
+      <origin
+        xyz="0.63243 0.41031 6.167E-07"
+        rpy="0 0 0" />
+      <mass
+        value="285.1" />
+      <inertia
+        ixx="135.44"
+        ixy="12.871"
+        ixz="0.0021992"
+        iyy="173.33"
+        iyz="-0.0023358"
+        izz="90.525" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/4chandou.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/4chandou.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint4"
+    type="revolute">
+    <origin
+      xyz="0 2.925 0"
+      rpy="1.5708 0 1.5708" />
+    <parent
+      link="3dougan" />
+    <child
+      link="4chandou" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="10dghuosai">
+    <inertial>
+      <origin
+        xyz="1.4433E-14 -0.80097 6.4985E-13"
+        rpy="0 0 0" />
+      <mass
+        value="19.392" />
+      <inertia
+        ixx="8.1302"
+        ixy="1.454E-13"
+        ixz="-3.4084E-16"
+        iyy="0.045791"
+        iyz="5.0663E-14"
+        izz="8.1409" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/10dghuosai.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/10dghuosai.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint10"
+    type="revolute">
+    <origin
+      xyz="0 -0.81541 0.24"
+      rpy="1.5708 1.5708 -1.5708" />
+    <parent
+      link="3dougan" />
+    <child
+      link="10dghuosai" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="11cdgan">
+    <inertial>
+      <origin
+        xyz="-7.142E-08 0.54528 -1.1299E-08"
+        rpy="0 0 0" />
+      <mass
+        value="9.5739" />
+      <inertia
+        ixx="2.0123"
+        ixy="-2.9462E-07"
+        ixz="-5.1743E-08"
+        iyy="0.044044"
+        iyz="3.6405E-08"
+        izz="2.0155" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/11cdgan.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/11cdgan.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint11"
+    type="revolute">
+    <origin
+      xyz="0 0.32228 0.52931"
+      rpy="1.5708 -1.5708 -1.5708" />
+    <parent
+      link="3dougan" />
+    <child
+      link="11cdgan" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="12liangan2">
+    <inertial>
+      <origin
+        xyz="-0.3092 1.1351E-09 -1.7838E-07"
+        rpy="0 0 0" />
+      <mass
+        value="40.465" />
+      <inertia
+        ixx="0.67185"
+        ixy="5.4231E-09"
+        ixz="-1.2804E-07"
+        iyy="2.673"
+        iyz="-3.9415E-07"
+        izz="2.5982" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/12liangan2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/12liangan2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint12"
+    type="revolute">
+    <origin
+      xyz="0 2.515 0"
+      rpy="-1.5708 0 -1.5708" />
+    <parent
+      link="3dougan" />
+    <child
+      link="12liangan2" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="13cdhuosai">
+    <inertial>
+      <origin
+        xyz="2.6734E-13 -0.63367 7.5837E-13"
+        rpy="0 0 0" />
+      <mass
+        value="15.607" />
+      <inertia
+        ixx="4.1805"
+        ixy="3.1987E-14"
+        ixz="1.8646E-17"
+        iyy="0.036574"
+        iyz="8.2347E-14"
+        izz="4.1913" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/13cdhuosai.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/13cdhuosai.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint13"
+    type="revolute">
+    <origin
+      xyz="-0.64 0 0"
+      rpy="0 0 -1.5708" />
+    <parent
+      link="12liangan2" />
+    <child
+      link="13cdhuosai" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="14liangan1">
+    <inertial>
+      <origin
+        xyz="-0.33435 -2.337E-08 1.7266E-08"
+        rpy="0 0 0" />
+      <mass
+        value="19.143" />
+      <inertia
+        ixx="0.15562"
+        ixy="-1.0211E-07"
+        ixz="-1.6171E-07"
+        iyy="0.91282"
+        iyz="8.579E-09"
+        izz="0.88411" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/14liangan1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/14liangan1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint14"
+    type="revolute">
+    <origin
+      xyz="-0.64 0 0"
+      rpy="-1.5708 0 3.1416" />
+    <parent
+      link="12liangan2" />
+    <child
+      link="14liangan1" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="3.14"
+      upper="3.14"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="7dbrhuosai">
+    <inertial>
+      <origin
+        xyz="3.5527E-15 -0.66744 0.275"
+        rpy="0 0 0" />
+      <mass
+        value="11.061" />
+      <inertia
+        ixx="3.4611"
+        ixy="2.0499E-14"
+        ixz="1.4204E-16"
+        iyy="0.021177"
+        iyz="-1.6584E-14"
+        izz="3.4707" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/7dbrhuosai.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/7dbrhuosai.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint7"
+    type="revolute">
+    <origin
+      xyz="0 2.2642 1.0787"
+      rpy="1.5708 -1.5708 1.5708" />
+    <parent
+      link="2dongbi" />
+    <child
+      link="7dbrhuosai" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="8dblhuosai">
+    <inertial>
+      <origin
+        xyz="3.33066907387547E-15 -0.667440027957437 -0.0433263736101925"
+        rpy="0 0 0" />
+      <mass
+        value="11.0612825522758" />
+      <inertia
+        ixx="3.46110303337613"
+        ixy="1.49958170880815E-14"
+        ixz="-1.18968090472971E-16"
+        iyy="0.0211765702235837"
+        iyz="-7.18658460716524E-15"
+        izz="3.47070837629348" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/8dblhuosai.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/8dblhuosai.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint8"
+    type="revolute">
+    <origin
+      xyz="-0.23167 2.2642 1.0787"
+      rpy="1.5708 -1.5708 1.5708" />
+    <parent
+      link="2dongbi" />
+    <child
+      link="8dblhuosai" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="9dggan">
+    <inertial>
+      <origin
+        xyz="-3.89869505568186E-08 0.713594227840676 6.38155546889115E-09"
+        rpy="0 0 0" />
+      <mass
+        value="11.6969662337488" />
+      <inertia
+        ixx="4.00282392932801"
+        ixy="-2.29090552319143E-07"
+        ixz="-5.54909954177894E-08"
+        iyy="0.05520244376999"
+        iyz="-9.16910187012643E-09"
+        izz="4.00610574983168" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/9dggan.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/9dggan.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint9"
+    type="revolute">
+    <origin
+      xyz="0 3.1606 1.1967"
+      rpy="-1.5708 -1.5708 1.5708" />
+    <parent
+      link="2dongbi" />
+    <child
+      link="9dggan" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="5dbrgan">
+    <inertial>
+      <origin
+        xyz="3.73045285773088E-08 0.621467989771039 -0.0747185691696682"
+        rpy="0 0 0" />
+      <mass
+        value="9.87425796110013" />
+      <inertia
+        ixx="2.80490501063707"
+        ixy="7.00026221062827E-07"
+        ixz="1.42905644124295E-06"
+        iyy="0.0378695138564403"
+        iyz="0.0608998479936682"
+        izz="2.80218058294718" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/5dbrgan.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/5dbrgan.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint5"
+    type="revolute">
+    <origin
+      xyz="0.19001 0.597 -0.6445"
+      rpy="1.5708 -1.5708 -1.5708" />
+    <parent
+      link="1huizhuantai" />
+    <child
+      link="5dbrgan" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="6dblgan">
+    <inertial>
+      <origin
+        xyz="-6.10060434391713E-08 0.62146755499709 -0.264729316181055"
+        rpy="0 0 0" />
+      <mass
+        value="9.87424457753426" />
+      <inertia
+        ixx="2.80490291461805"
+        ixy="9.11579252969516E-07"
+        ixz="1.47924217996168E-06"
+        iyy="0.0378694913575865"
+        iyz="0.0609003384736998"
+        izz="2.80217801483438" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/6dblgan.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/6dblgan.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint6"
+    type="revolute">
+    <origin
+      xyz="0 0.597 -0.6445"
+      rpy="1.5708 1.5708 1.5708" />
+    <parent
+      link="1huizhuantai" />
+    <child
+      link="6dblgan" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="1" />
+  </joint>
+</robot>

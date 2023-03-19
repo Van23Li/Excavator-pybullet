@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="excavatorplus">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.037276 -0.11211 -1.3696"
+        rpy="0 0 0" />
+      <mass
+        value="1584.9" />
+      <inertia
+        ixx="2256.8"
+        ixy="-0.00030194"
+        ixz="0.00039682"
+        iyy="1846.1"
+        iyz="-4.069"
+        izz="3789.3" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="1huizhuantai">
+    <inertial>
+      <origin
+        xyz="-0.033183 -0.98161 -0.29422"
+        rpy="0 0 0" />
+      <mass
+        value="4155.4" />
+      <inertia
+        ixx="3529.1"
+        ixy="203.56"
+        ixz="1.8362"
+        iyy="1890.9"
+        iyz="99.215"
+        izz="4823.8" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/1huizhuantai.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/1huizhuantai.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint1"
+    type="continuous">
+    <origin
+      xyz="-0.037276 -0.092793 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="1huizhuantai" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3"
+      upper="3"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="2dongbi">
+    <inertial>
+      <origin
+        xyz="-5.4753E-15 2.7656 0.58457"
+        rpy="0 0 0" />
+      <mass
+        value="1139.2" />
+      <inertia
+        ixx="2254.3"
+        ixy="-1.5608E-12"
+        ixz="1.039E-12"
+        iyy="117.73"
+        iyz="110.05"
+        izz="2173.1" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/2dongbi.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/2dongbi.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint2"
+    type="revolute">
+    <origin
+      xyz="0 0.1 0"
+      rpy="0 0 0" />
+    <parent
+      link="1huizhuantai" />
+    <child
+      link="2dongbi" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-0.7987"
+      upper="1.0360"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="3dougan">
+    <inertial>
+      <origin
+        xyz="-6.546E-13 0.8525 0.13673"
+        rpy="0 0 0" />
+      <mass
+        value="588.48" />
+      <inertia
+        ixx="532.28"
+        ixy="1.0515E-11"
+        ixz="-1.0057E-12"
+        iyy="30.031"
+        iyz="47.289"
+        izz="525.77" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/3dougan.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/3dougan.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint3"
+    type="revolute">
+    <origin
+      xyz="0 5.7 0"
+      rpy="0 0 0" />
+    <parent
+      link="2dongbi" />
+    <child
+      link="3dougan" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-2.9552"
+      upper="-0.7987"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="4chandou">
+    <inertial>
+      <origin
+        xyz="0.63243 0.41031 6.167E-07"
+        rpy="0 0 0" />
+      <mass
+        value="285.1" />
+      <inertia
+        ixx="135.44"
+        ixy="12.871"
+        ixz="0.0021992"
+        iyy="173.33"
+        iyz="-0.0023358"
+        izz="90.525" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/4chandou.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/4chandou.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint4"
+    type="revolute">
+    <origin
+      xyz="0 2.925 0"
+      rpy="1.5708 0 1.5708" />
+    <parent
+      link="3dougan" />
+    <child
+      link="4chandou" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-2.7163"
+      upper="0.5633"
+      effort="100"
+      velocity="1" />
+  </joint>
+</robot>
